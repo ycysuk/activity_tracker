@@ -1,0 +1,16 @@
+cat,rule
+web,.*Chrome|msedge
+work-writing,.*WPS|.*Evernote|XMind|VirtualBox|PDFEdit|et\.exe
+work-management,.*calendar work
+work-programming,.*Notepad|GitHub|.*Stack Overflow|IPython.*|Code\.exe|sqlitebrowser|pgadmin|Sophon|python|PUTTY|cmd
+work-studying,.*小象学院|.*机器之心|.*知乎|.*LeetCode|.*牛客网
+work-at,Activity Tracker
+info-searching,.*Bing|.*搜狗搜索|Listary|LinksLauncher|搜索
+file-arrangement,explorer|百度网盘|.*AriaNg|.*远程桌面连接|.*FileZilla|7zFM|7zG|3uTools|DoubleKiller|WinSCP|BaiduPCS|aria2c|MiRouter
+sys-setting,任务管理器|ShellExperienceHost|ApplicationFrameHost|Rainmeter
+comms-IM,微信.*|TIM|腾讯会议|wemeetapp|飞书|钉钉|tblive
+comms-Email,.*Thunderbird
+media,.*XnView|Movies|MangaMeeya|屏幕截图|QuickViewer|PotPlayer|.*画图|ImageDupeless|PaintDotNet
+media-modeling,.*SketchUp
+afk,LockApp|LockingWindow|^explorer$|StartMenuExperienceHost
+afk-off,Activity Tracker Stopped

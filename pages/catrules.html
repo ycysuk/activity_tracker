@@ -1,0 +1,49 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Activity Tracker</title>
+
+    <link rel="stylesheet" type="text/css" href="/ui.css" />
+    <script src="/jquery-3.5.1/jquery.min.js"></script>
+    <script src="/d3-6.3.1/d3.min.js"></script>
+</head>
+
+<html>
+    <body>
+        <h2>Activity Tracker</h2>
+        <form id="catrulesform" action="/save_catrules" method="POST">
+            <div>Category rules (RegExp)</div>
+            <div id="rulesinput" class="catrules"></div>
+                <p id="p_0"></p>
+            <div>
+                <input type="submit" value="Save"/>
+            </div>
+        </form>
+
+        <script>
+
+
+let btn_no = 1;
+
+function add_btn(cat, rule, after) {
+    $('<p id="p_' + btn_no + '">' +
+        '<input type="text" name="cats_list" value="' + cat + '" placeholder="cat" autocomplete="off" size="20"/>&nbsp;:&nbsp;&nbsp;' + 
+        '<input type="text" name="rules_list" value="' + rule + '" placeholder="regexp" autocomplete="off" size="80"/>&nbsp;&nbsp;' +
+        '<input type="button" name="del" value="-" onclick="$(p_' + btn_no + ').remove()"/>&nbsp;' +
+        '<input type="button" name="add" value="+" onclick="add_btn(\'\',\'\',' + btn_no + ')"/>' +
+        '</p>'
+    ).insertAfter($("#p_" + after));
+
+    btn_no += 1;
+};
+
+d3.json(window.location.origin + "/catrules.json").then(d => {
+        for (var i in d) {
+            add_btn(d[i][0], d[i][1], i);
+        }
+    }
+);
+
+        </script>
+    </body>
+</html>
