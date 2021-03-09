@@ -14,7 +14,7 @@ reads db and visualizes in browser <http://localhost:5601/>
 
 # screenshots
 
-category barchart & piechart
+category barchart & donut chart
 
 ![Screenshot 1](https://github.com/ycysuk/activity_tracker/blob/main/screenshots/Screenshot%201.png)
 
