@@ -216,7 +216,7 @@ const svg = d3.select(svg_id)
 const g = svg.append("g")
     .attr("transform", "translate(" + radius + "," + radius + ")") ;
 
-    const color = d3.scaleOrdinal()
+const color = d3.scaleOrdinal()
     .domain(data.map(d => d.name))
     .range(d3.quantize(t => d3.interpolateSpectral(t * 0.8 + 0.1), data.length).reverse());
 
@@ -234,6 +234,17 @@ svg.selectAll("path")
   .join("path")
     .attr("fill", d => color(d.data.name))
     .attr("d", arc)
+  .transition()
+  .duration(1000)
+    .attrTween("d", d => {
+        var i = d3.interpolate(d.startAngle, d.endAngle);
+        return function(t) {
+            d.endAngle = i(t);
+            return arc(d);
+        };
+    });
+
+svg.selectAll("path")
   .append("title")
     .text(d => `${d.data.name}: ${d.data.value.toLocaleString()}m`);
 
