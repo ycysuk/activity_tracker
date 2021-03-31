@@ -23,6 +23,11 @@ p {
     text-align: center;
 }
 
+div.d3-tooltip {
+    height: 48px;   /* 3 lines */
+    text-align: left;
+}
+
 table.dataframe {
     margin: auto;
 }

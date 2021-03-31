@@ -225,7 +225,7 @@ const pie = d3.pie()
     .sort(null)
     .value(d => d.value);
 
-const arc = d3.arc().innerRadius(radius * 0.382).outerRadius(radius)
+const arc = d3.arc().innerRadius(radius * 0.382).outerRadius(radius);
 
 const arcs = pie(data);
 
@@ -426,8 +426,8 @@ svg.append("g")
 
 
 svg.on("mousemove", function(event) {
-    let [x,y] = d3.pointer(event, this);
-    line.attr("transform", `translate(${x} 0)`);
+    let [x_, y_] = d3.pointer(event, this);
+    line.attr("transform", `translate(${x_} 0)`);
 
     if (x_ > margin.left) {
         pointer_tm
@@ -443,16 +443,16 @@ svg.on("mousemove", function(event) {
 
 
 
+
 const tooltip = d3
     .select('body')
     .append('div')
+    .attr('class', 'd3-tooltip')
     .style("position", "absolute")
     .style("pointer-events", "none")
     .style("top", 0)
     // .style("opacity", 0)
     .style('visibility', 'hidden')
-    .style('height', 'auto')
-    .style('text-align', 'left')
     .style("background", "white")
     .style("border-radius", "5px")
     .style("box-shadow", "0 0 10px rgba(0,0,0,.25)")
@@ -464,6 +464,7 @@ const tooltip = d3
 const pointer_tm = d3
     .select('body')
     .append('div')
+    .attr('class', 'd3-tooltip')
     .style("position", "absolute")
     .style("pointer-events", "none")
     .style("top", 0)

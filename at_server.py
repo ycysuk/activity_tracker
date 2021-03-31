@@ -109,7 +109,8 @@ class ATServer(Thread):
 
         self.df_timeline = gb.first()[[by, 'timestamp']]
         self.df_timeline['timestamp_end'] = gb.last()['timestamp_end']
-        self.df_timeline['duration'] = gb.duration.sum()['duration']
+        # self.df_timeline['duration'] = gb.duration.sum()['duration']
+        self.df_timeline['duration'] = (self.df_timeline.timestamp_end - self.df_timeline.timestamp).dt.total_seconds()
 
         # record top title in each group
         df2 = self.df_events.groupby(['id_g', 'title'], sort=False, as_index=False).duration.sum()
