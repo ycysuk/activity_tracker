@@ -1,0 +1,28 @@
+h2 {
+    font-family: "Microsoft YaHei", Arial;
+    font-size: 2rem;
+    text-align: center;
+}
+
+div {
+    height: 32px;
+    position: relative;
+    text-align: center;
+}
+
+div.catrules {
+    height: auto;
+    position: relative;
+    text-align: center;
+    margin: 5px;
+}
+
+p {
+    height: auto;
+    position: relative;
+    text-align: center;
+}
+
+table.dataframe {
+    margin: auto;
+}
